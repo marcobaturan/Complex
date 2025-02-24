@@ -34,6 +34,90 @@
     El objetivo final es probar arquitecturas cada vez más complejas y eficientes que puedan ejecutarse 
     en ordenadores de capacidad limitados, logrando modelos virtuales de cerebros artificiales.
 
+## Summaries
+
+--------------------------------------------------------
+
+**Summary of LLM Tree of Thoughts (LLM_ToT) Code**
+
+### Objective:
+The LLM Tree of Thoughts (LLM_ToT) code is designed to explore and expand logical reasoning through iterative thought generation using a Large Language Model (LLM). It simulates a structured thinking process by representing ideas as nodes in a tree and expanding these ideas through multiple iterations of model-driven prompts. This implementation can be used to solve complex problems step-by-step by generating and evaluating potential solutions.
+
+### Key Components and Their Roles:
+
+1. **Module Imports:**
+   - `sys`: Provides access to system-specific parameters and functions.
+   - `time` (aliased as `t`): Measures execution time to track performance.
+   - `llama_cpp`: Interfaces with the Llama model for generating responses.
+
+2. **Performance Measurement:**
+   - The code records the start time (`start = t.time()`) to calculate the total execution duration later.
+
+3. **ThoughtNode Class:**
+   - Represents a node in the thought tree.
+   - Attributes:
+      - `thought`: Stores the content of the idea.
+      - `children`: Holds the list of subsequent thought nodes (default is an empty list).
+
+4. **TreeOfThought Class:**
+   This is the core structure managing thought generation and exploration.
+   
+   **Attributes:**
+   - `root`: Root node of the thought tree initialized with the starting prompt.
+   - `max_iterations`: Limits the depth of thought exploration (default is 3).
+   - `llm`: Instance of the Llama model for generating responses.
+   - `current_thoughts`: Tracks active thoughts to be expanded.
+   - `max_tokens`: Controls the output length of each LLM-generated response.
+
+   **Methods:**
+
+   - `__init__`: Initializes the tree with a starting prompt and parameters.
+
+   - `call_llm`: Interfaces with the Llama model to generate responses based on provided prompts.
+      - Uses a structured message format for the LLM.
+      - Employs a temperature value of 0.5 for balanced randomness and determinism.
+      - Handles errors gracefully and returns an empty string in case of failure.
+
+   - `explore_thoughts`: Expands the tree by generating new thoughts from the LLM.
+      - Constructs a prompt to guide the LLM in producing two new ideas.
+      - Parses the LLM's output and appends new thoughts as child nodes.
+
+   - `run`: Executes the iterative thought exploration process.
+      - Loops through the thought tree, expanding each node up to `max_iterations`.
+      - Prints each explored thought for transparency.
+
+   - `update_starting_thought`: Allows the root thought to be updated dynamically, resetting the tree for new exploration.
+
+   - `print_tree`: Recursively displays the hierarchical structure of the tree, representing each thought and its descendants.
+
+5. **Llama Model Initialization:**
+   - The model is instantiated with specific parameters:
+      - `model_path`: Path to the Llama model file.
+      - `n_ctx`: Context length (2048 tokens, approximately 1500 words).
+      - `n_threads`: Number of CPU threads (8 for parallelism).
+      - `n_gpu_layers`: Number of model layers offloaded to GPU (35 for acceleration).
+
+6. **Execution Flow:**
+   - The script starts by defining a complex logical reasoning problem as the initial prompt.
+   - An instance of `TreeOfThought` is created with the prompt and Llama model.
+   - The `run()` method initiates the thought generation and exploration process.
+   - Upon completion, the entire tree structure is displayed using `print_tree()`.
+
+7. **Performance Reporting:**
+   - After execution, the script calculates and prints the total time taken to process the thought tree (`end - start`).
+
+### Example Problem:
+The script includes a sample logical deduction problem involving three individuals (Truthful, Liar, Random) and their responses to specific questions. The model iteratively explores and analyzes potential solutions to identify each person's identity while considering logical ambiguities and inconsistencies.
+
+### Use Case:
+This implementation is suitable for:
+- Solving complex logical and deductive reasoning problems.
+- Exploring decision trees and generating multi-step solutions.
+- Analyzing ambiguous or multi-outcome scenarios.
+- Enhancing cognitive models through iterative idea expansion.
+---------------------------------------------------------------------------------
+
+
 ## Models/Modelos
 
 - [TinyLlama-R1-LIMO-GGUF](https://huggingface.co/mradermacher/TinyLlama-R1-LIMO-GGUF/tree/main)
