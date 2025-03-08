@@ -73,7 +73,7 @@ def main():
     # Configure the Hugging Face client
     client = InferenceClient(
         provider="hf-inference",
-        api_key="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"  # Replace with your API Key
+        api_key=""  # Replace with your API Key
     )
 
     llm = Llama(
