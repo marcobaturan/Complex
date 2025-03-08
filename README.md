@@ -116,7 +116,106 @@ This implementation is suitable for:
 - Analyzing ambiguous or multi-outcome scenarios.
 - Enhancing cognitive models through iterative idea expansion.
 ---------------------------------------------------------------------------------
+# TinyLlama Model Load and Execution Report
 
+## Summary
+
+The `tinyllama-1.1b-chat-v1.0` model has been successfully loaded in the environment. This model has been optimized to enhance its performance by leveraging the **Chain of Thought (CoT)** technique, which allows for better utilization of the model’s capacity by breaking down complex problems into simpler steps and logical reasoning. The model's load and execution show efficient response times, with improved evaluation times through the use of CoT.
+
+## Load Details
+
+- **Model Loaded**: `tinyllama-1.1b-chat-v1.0`
+- **Model Size**: 636.18 MiB
+- **Quantization Version**: Q4_K (Optimized for medium size)
+- **Architecture**: Llama
+- **Special Tokens**:
+  - BOS Token: `<s>`
+  - EOS Token: `</s>`
+  - UNK Token: `<unk>`
+  - PAD Token: `</s>`
+
+## Optimization Description
+
+**Chain of Thought (CoT)** has been implemented to maximize the model's reasoning ability, allowing it to break down complex tasks into step-by-step reasoning. This enhances the model's ability to provide more accurate and detailed responses by performing thorough evaluations rather than simple or direct answers.
+
+### CoT Example
+
+**Prompt**: "Solve the following math problem: If John has 7 pencils and gives away 2, how many are left?"
+
+**CoT Response**:  
+- Step 1: John has 7 pencils.
+- Step 2: He gives 2 pencils to someone else.
+- Step 3: Subtract 2 from 7.
+- Result: John has 5 pencils.
+
+The model uses reasoning based on analogies and common patterns to approach the problem, improving the clarity and accuracy of the responses.
+
+## Performance
+
+- **Load Time**: 447.14 ms
+- **Evaluation Time (Prompt)**: 447.04 ms / 57 tokens (7.84 ms per token)
+- **Evaluation Time (Response)**: 940.64 ms / 45 executions (20.90 ms per token)
+- **Total Time**: 1403.50 ms / 102 tokens
+
+**Response Time**: 1.40 seconds
+
+## Conclusion
+
+The implementation of CoT, along with optimizations in model load and execution, has demonstrated an improvement in performance and the model's ability to process and generate more complex and detailed responses. Using this technique has allowed for maximizing the model's efficiency and improving its accuracy in reasoning tasks.
+
+# Conclusive Report on the Skeleton of Thoughts (SoT) Use Case
+
+## Summary of the Use Case
+
+The Skeleton of Thoughts (SoT) use case involved the implementation of a local language model, specifically `tinyllama-1.1b-chat-v1.0`, to generate and expand a hierarchical outline on the topic "The Impact of Artificial Intelligence on Future Job Markets." The goal was to demonstrate the model's ability to create coherent and detailed thought structures, as well as to expand specific points within the outline.
+
+## Model Setup and Loading
+
+- **Model Used**: `tinyllama-1.1b-chat-v1.0`
+- **Architecture**: Llama
+- **Maximum Context**: 2048 tokens
+- **Model Layers**: 22
+- **Attention Heads**: 32
+- **Embedding Length**: 2048
+- **Model Size**: 1.10B parameters
+
+The model was successfully loaded with 23 key-value pairs and 201 tensors, using the GGUF V3 version. The model loading and tokenizer initialization were completed without issues, with efficient resource allocation to the CPU.
+
+## Initial Outline Generation
+
+The initial outline was generated correctly with a depth of 2 levels and 3 points per level. The model provided a coherent structure that addressed various aspects of AI's impact on the job market, including the creation of new opportunities and the need for training programs.
+
+## Expansion of Specific Points
+
+Points "1." and "2.1." were expanded to provide a more detailed analysis. The expansion of point "1." offered deeper insights into how AI can affect different industries, while the expansion of point "2.1." focused on the importance of AI adoption and upskilling for employees.
+
+## Addition of Cross-Links
+
+Cross-links were added between points "1." and "2.", and between "1.1." and "2.1." to establish meaningful relationships within the outline. These links helped connect ideas and provide a more integrated view of AI's impact on the job market.
+
+## Summary Generation
+
+The attempt to generate a summary of the outline was unsuccessful due to the lack of content in the outline at that moment. This suggests that the model needs a more complete outline to generate meaningful summaries.
+
+## Outline Export
+
+The final outline was successfully exported to a Markdown file (`skeleton_output.md`), facilitating its viewing and further editing.
+
+## Performance
+
+- **Total Execution Time**: 37.95 seconds
+- **API Calls**: 3
+- **Total Tokens**: 1920
+- **Outline Size**: 13 points
+- **Cache Hits**: 3
+- **Average Time per Call**: 12.65 seconds
+- **Average Tokens per Call**: 640
+
+The overall performance was efficient, with appropriate use of caching to optimize repeated calls.
+
+## Conclusion
+
+The use case demonstrated the `tinyllama-1.1b-chat-v1.0` model's capability to generate and expand thought structures coherently and in detail. However, areas for improvement were identified, such as the need for a more complete outline for summary generation and the optimization of the model interface to avoid argument errors. Overall, the model showed promising performance for applications requiring the generation of complex thought structures.
 
 ## Models/Modelos
 
@@ -132,7 +231,10 @@ This implementation is suitable for:
 - [CoT](https://medium.com/@sujathamudadla1213/chain-of-thought-cot-tree-of-thought-tot-and-react-response-act-6d8103f52a48)
 - [SoT](https://www.analyticsvidhya.com/blog/2024/07/skeleton-of-thoughts/)
 - [ToT](https://www.ibm.com/es-es/topics/tree-of-thoughts#:~:text=Marco%20para%20el%20%C3%A1rbol%20de,a%20los%20procesos%20cognitivos%20humanos)
-
+- [CoT1](https://clickup.com/blog/chain-of-thought-prompting/)
+- [CoT2](https://medium.com/@devmallyakarar/chain-of-thought-cot-in-large-language-models-prompting-and-concise-cot-with-code-82821f9a832d)
+- [Memoization](https://stackoverflow.com/questions/1988804/what-is-memoization-and-how-can-i-use-it-in-python)
+- [Anlytics Vydia](https://www.analyticsvidhya.com/blog/2024/07/skeleton-of-thoughts/)
 ## References/Referencias
 
 - [TinyLlama installation](https://dev.to/_ken0x/tinyllama-llm-a-step-by-step-guide-to-implementing-the-11b-model-on-google-colab-1pjh)
