@@ -37,6 +37,7 @@ except Exception as e:
 
 # Initialize the text-to-speech engine
 engine = None
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Context manager to handle the text-to-speech engine
 @contextmanager
@@ -54,7 +55,8 @@ def get_engine():
 # Load the model using Streamlit's caching mechanism
 @st.cache_resource
 def load_model():
-    return md.vl(model='moondream-0_5b-int4.mf.gz')
+
+    return md.vl(model=os.path.join(base_dir, "Models", 'moondream-0_5b-int4.mf.gz'))
 
 # Function to speak text asynchronously
 def speak_async(text):
@@ -70,10 +72,12 @@ def speak_async(text):
 def main():
     # Configure the Hugging Face client
     client = InferenceClient(
-        provider="",
-        api_key=""  # Replace with your API Key
+        provider="hf-inference",
+        api_key="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"  # Replace with your API Key
     )
-    llm = Llama(model_path="../Models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf",
+
+    llm = Llama(
+                model_path = os.path.join(base_dir, "Models", "tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"),
                 n_ctx=2048,
                 n_threads=8,
                 n_gpu_layers=35)
@@ -148,7 +152,7 @@ def main():
                     # Generate image from text input
                     image = client.text_to_image(
                         description,
-                        model="blink7630/storyboard-sketch"
+                        model=os.path.join(base_dir, "Models", "Storyboard_sketch.safetensors")
                     )
                     # Display the generated image
                     st.image(image, caption="Generated Image", use_column_width=True)
