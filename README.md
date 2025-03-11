@@ -1,5 +1,10 @@
 # Complex
 
+## Authors
+
+- [Marco Baturan](https://github.com/marcobaturan)
+- [Roman Sitelew](https://github.com/RomanPlusPlus)
+
 ## Abstract
     Complex is a framework for research in the field of artificial intelligence.
     Complex is a Cognitive Architecture (CA) built from compact multi-module multimodal (4M)
