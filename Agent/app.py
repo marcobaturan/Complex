@@ -31,6 +31,7 @@ try:
     import time
     from huggingface_hub import InferenceClient
     from llama_cpp import Llama
+    import py_avataaars as pa
     print("All modules loaded.")
 except Exception as e:
     print("Some modules are missing: " + str(e))
@@ -73,7 +74,7 @@ def main():
     # Configure the Hugging Face client
     client = InferenceClient(
         provider="hf-inference",
-        api_key=""  # Replace with your API Key
+        api_key="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"  # Replace with your API Key
     )
 
     llm = Llama(

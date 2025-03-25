@@ -1,0 +1,30 @@
+2025-03-25 17:32:21,473 - __main__ - ERROR - Model loading failed: Incorrect path_or_model_id: '../Models/gemma-3-1b-it-Q8_0.gguf'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+2025-03-25 17:33:19,954 - __main__ - ERROR - Model loading failed: Incorrect path_or_model_id: '../Models/gemma-3-1b-it-Q8_0.gguf'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+2025-03-25 17:36:28,173 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 17:36:28,173 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 17:43:10,634 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 17:43:10,635 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 17:46:52,550 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 17:46:52,550 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:05:02,830 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:05:02,830 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:09:38,879 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:09:38,879 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:10:59,089 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:10:59,089 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:17:19,170 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:17:19,170 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:19:09,804 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:19:09,804 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:28:36,225 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:28:36,225 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:29:29,009 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:29:29,009 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:30:39,647 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:30:39,654 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:31:13,153 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:31:13,153 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:31:59,174 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:31:59,175 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-25 18:34:57,594 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-25 18:34:57,594 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2

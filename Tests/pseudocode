@@ -1,0 +1,133 @@
+# con SQL
+Función PseudoInfiniteAttention(mindfile, mensaje_usuario):
+    # Dividir el mindfile en fragmentos
+    fragmentos = dividir_mindfile_en_fragmentos(mindfile)
+
+    # Preparar almacenamiento de resultados
+    tabla_analisis = SQLite()
+    tabla_resultados = SQLite()
+
+    # Procesar cada fragmento en una instancia separada
+    para cada fragmento en fragmentos:
+        # Crear instancia del modelo
+        instancia = crear_instancia_modelo()
+
+        # Preparar prompt para la instancia
+        prompt = (
+            "Nota: Solo tienes una parte pequeña de los datos. " +
+            "Si no encuentras información relevante, responde 'PASS'. " +
+            fragmento +
+            mensaje_usuario
+        )
+
+        # Generar respuesta
+        respuesta = instancia.procesar(prompt)
+
+        # Almacenar resultado
+        tabla_resultados.guardar(
+            clave=fragmento,
+            valor=respuesta
+        )
+
+    # Instancia agregadora
+    instancia_agregadora = crear_instancia_modelo()
+
+    # Preparar prompt de agregación
+    prompt_agregacion = (
+        "Estás recibiendo respuestas de múltiples instancias " +
+        "que procesaron fragmentos parciales. " +
+        "Selecciona la respuesta más relevante o " +
+        "genera una respuesta final unificada."
+    )
+
+    # Agregar resultados de todas las instancias
+    for resultado in tabla_resultados:
+        prompt_agregacion += resultado
+
+    # Generar respuesta final
+    respuesta_final = instancia_agregadora.procesar(prompt_agregacion)
+
+    return respuesta_final
+
+# Función auxiliar para dividir mindfile
+Función dividir_mindfile_en_fragmentos(mindfile, tamano_fragmento=1000):
+    # Dividir el mindfile en fragmentos de tokens
+    fragmentos = []
+    tokens = tokenizar(mindfile)
+
+    para i desde 0 hasta longitud(tokens) con paso tamano_fragmento:
+        fragmento = tokens[i:i+tamano_fragmento]
+        fragmentos.append(fragmento)
+
+    return fragmentos
+
+
+# sin SQL
+Función PseudoInfiniteAttention(mindfile, mensaje_usuario):
+    # Dividir el mindfile en fragmentos
+    fragmentos = dividir_mindfile_en_fragmentos(mindfile)
+
+    # Almacenar resultados de cada instancia
+    resultados = []
+
+    # Procesar cada fragmento en una instancia separada
+    para cada fragmento en fragmentos:
+        # Crear instancia del modelo
+        instancia = crear_instancia_modelo()
+
+        # Preparar prompt para la instancia
+        prompt = (
+            "Nota: Solo tienes una parte pequeña de los datos. " +
+            "Si no encuentras información relevante, responde 'PASS'. " +
+            fragmento +
+            mensaje_usuario
+        )
+
+        # Generar respuesta
+        respuesta = instancia.procesar(prompt)
+
+        # Almacenar resultado
+        resultados.agregar(respuesta)
+
+    # Instancia agregadora
+    instancia_agregadora = crear_instancia_modelo()
+
+    # Filtrar resultados relevantes
+    resultados_validos = filtrar(resultados, excluir='PASS')
+
+    # Preparar prompt de agregación
+    prompt_agregacion = (
+        "Estás recibiendo respuestas de múltiples instancias " +
+        "que procesaron fragmentos parciales. " +
+        "Selecciona la respuesta más relevante o " +
+        "genera una respuesta final unificada."
+    )
+
+    # Agregar resultados válidos
+    para cada resultado en resultados_validos:
+        prompt_agregacion += resultado
+
+    # Generar respuesta final
+    respuesta_final = instancia_agregadora.procesar(prompt_agregacion)
+
+    return respuesta_final
+
+# Función auxiliar para dividir mindfile
+Función dividir_mindfile_en_fragmentos(mindfile, tamano_fragmento=1000):
+    # Dividir el mindfile en fragmentos de tokens
+    fragmentos = []
+    tokens = tokenizar(mindfile)
+
+    para i desde 0 hasta longitud(tokens) con paso tamano_fragmento:
+        fragmento = tokens[i:i+tamano_fragmento]
+        fragmentos.agregar(fragmento)
+
+    return fragmentos
+
+# Función auxiliar para filtrar
+Función filtrar(lista, excluir):
+    resultados_filtrados = []
+    para cada item en lista:
+        si item != excluir:
+            resultados_filtrados.agregar(item)
+    return resultados_filtrados

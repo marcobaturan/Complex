@@ -270,6 +270,135 @@ Performance metrics indicate that the model processed 660 tokens in approximatel
 
 The experiment demonstrates that the iterative critique mechanism effectively guides the model towards clearer and more comprehensive outputs while maintaining performance. Further testing could explore multi-iteration scenarios and prompt complexity to evaluate the system's robustness under diverse conditions.
 
+### **Experimental Report: Infinite Attention powered by SQL**
+
+#### 1. Introduction
+
+The Infinite Attention project represents a novel approach to computational personality emulation, leveraging advanced natural language processing techniques, semantic context extraction, and intelligent caching mechanisms. Our experimental framework aims to create a dynamic, context-aware conversational system that can adapt to and emulate complex personality profiles stored within a structured knowledge repository.
+
+#### 2. Experimental Design
+
+##### 2.1 Core Architecture
+Our experimental system comprises several critical components:
+- **Semantic Context Engine**: Extracts and contextualizes important terms
+- **Response Cache**: Implements an SQLite-based caching mechanism
+- **Model Loader**: Supports multiple language model backends
+- **Personality Extraction Module**: Derives persona characteristics from input text
+
+##### 2.2 Technical Innovations
+- Parallel chunk processing
+- Semantic term extraction
+- Dynamic context injection
+- Multi-model support (Hugging Face Transformers, Llama CPP)
+
+#### 3. Methodology
+
+##### 3.1 Knowledge Representation
+The system utilizes a "MindFile" as the primary source of personality information. This text-based knowledge repository undergoes sophisticated processing:
+1. Semantic term extraction
+2. Context-related sentence mapping
+3. Persona profile generation
+
+##### 3.2 Processing Pipeline
+1. **Input Preprocessing**
+   - Chunk the MindFile into overlapping semantic segments
+   - Extract key terms and contextual relationships
+   - Prepare multi-dimensional context representation
+
+2. **Response Generation**
+   - Parallel chunk processing
+   - Contextual response generation
+   - Response filtering and aggregation
+
+##### 3.3 Caching Strategy
+- SQL-based caching with SHA-256 hashing
+- Real-time interaction logging
+- Efficient retrieval and storage mechanism
+
+#### 4. Experimental Results
+
+##### 4.1 Performance Metrics
+- **Processing Time**: Measured per interaction
+- **Resource Utilization**: CPU and RAM tracking
+- **Response Quality**: Context preservation and personality consistency
+
+##### 4.2 Key Observations
+- Significant reduction in redundant computation
+- Enhanced context retention
+- Improved response coherence
+- Flexible personality emulation
+
+#### 5. Technical Challenges and Mitigations
+
+##### 5.1 Identified Challenges
+- Context preservation
+- Computational overhead
+- Semantic coherence
+- Personality consistency
+
+##### 5.2 Mitigation Strategies
+- Parallel processing
+- Intelligent caching
+- Semantic similarity filtering
+- Multi-model support
+
+#### 6. Innovations
+
+##### 6.1 SQL-Powered Knowledge Management
+- Dynamic knowledge representation
+- Efficient retrieval mechanisms
+- Real-time interaction tracking
+
+##### 6.2 Adaptive Personality Emulation
+- Context-aware response generation
+- Semantic term extraction
+- Multi-dimensional personality mapping
+
+#### 7. Limitations and Future Work
+
+##### 7.1 Current Limitations
+- Dependency on high-quality MindFile content
+- Computational resource requirements
+- Model-specific performance variations
+
+##### 7.2 Proposed Future Enhancements
+- Advanced semantic similarity algorithms
+- Enhanced multi-modal personality extraction
+- Improved computational efficiency
+- Expanded model backend support
+
+#### 8. Conclusion
+
+The Infinite Attention framework demonstrates a promising approach to computationally complex personality emulation. By integrating advanced NLP techniques, intelligent caching, and flexible processing architectures, we have developed a system capable of nuanced, context-aware interactions.
+From version X we lost the functionality to watch the relational table between production and SQL DB, but improve the performance towards to more human personality.
+
+##### 8.1 Future Improvements
+
+- Enhanced semantic similarity algorithms
+- Add datatable of relations between production and SQL DB
+- Add optimization and memoization
+- Add multi-modal personality extraction
+- Connect with CoT, SoT, ToT, etc. options of thinking.
+- Add a function to expand the MindFile stored in database to learning from own interactions.
+- Use the relational, logical and mathematical functions in SQL to generate generalizations and linked
+  concepts and rules to make more powerful the system.
+- Improve the folder structure. (Now we are in tests folder)
+
+#### 9. Acknowledgments
+
+This research was conducted as part of an exploratory project in computational linguistics and artificial intelligence, with special thanks to the open-source communities supporting transformers, sentence embeddings, and machine learning frameworks.
+
+#### 10. References
+- Transformers Library Documentation
+- Sentence BERT: Sentence Embeddings using Siamese BERT-Networks
+- SQLite Documentation
+- Llama CPP Project
+
+**Keywords**: Artificial Intelligence, Natural Language Processing, Personality Emulation, Semantic Context, SQL Caching
+
+
+
+
 ## Models/Modelos
 
 - [TinyLlama-R1-LIMO-GGUF](https://huggingface.co/mradermacher/TinyLlama-R1-LIMO-GGUF/tree/main)
@@ -297,3 +426,6 @@ The experiment demonstrates that the iterative critique mechanism effectively gu
 
 - AIMA (Artificial Intelligence: A Modern Approach) 3º Edition for symbolic cognition.
 - GPT and Claude for PDF reports.
+- [PIA Claude chat research](https://claude.ai/share/4256d167-3fff-4528-8ab3-74c9945c2dd7)
+- [PIA Gemini chat research](https://gemini.google.com/app/ce0c926b8d14a47d)
+- [PIA GPT chat research](https://chatgpt.com/share/67e2ebca-8434-800c-9011-098c8f1652f0)

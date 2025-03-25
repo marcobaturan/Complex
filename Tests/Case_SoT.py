@@ -2,7 +2,6 @@ import re
 import time
 import functools
 from llama_cpp import Llama  # Importa la clase Llama
-from typing import Dict, Optional, List, Union, Tuple
 
 # Record the starting time to measure overall execution performance
 start_time = time.time()
